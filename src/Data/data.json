@@ -1,0 +1,23 @@
+{
+"userlogins": [
+
+		{
+			"username": "uiux@yopmail.com",
+			"password": "Test@1234"
+		}
+		
+		      ],
+"addclients": [
+	{
+		"username": "uiux@yopmail.com",
+		"password": "Test@1234",
+		"FirstName": "Enter",
+		"LastName": "client",
+		"Email":"ncs9825@yopmail.com",
+		"userid": "",
+		"pwd":"",
+		"email":"ncs9825@yopmail.com"
+	}
+	]
+		      
+}

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Login Successfully]]>
+    </line>
+    <line>
+      <![CDATA[Client module opened successfully]]>
+    </line>
+    <line>
+      <![CDATA[portalaccess on]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on save button]]>
+    </line>
+    <line>
+      <![CDATA[Client created successfully]]>
+    </line>
+    <line>
+      <![CDATA[Import/Audit button is visible in clientdashboard]]>
+    </line>
+    <line>
+      <![CDATA[Clients entered into import page]]>
+    </line>
+    <line>
+      <![CDATA[Import credit report tab is selected]]>
+    </line>
+    <line>
+      <![CDATA[popup is displaying]]>
+    </line>
+    <line>
+      <![CDATA[oneclick auto import tab is opened]]>
+    </line>
+    <line>
+      <![CDATA[username and password is autoentered]]>
+    </line>
+    <line>
+      <![CDATA[Running autoimport]]>
+    </line>
+    <line>
+      <![CDATA[Credit analysis popup is displaying]]>
+    </line>
+    <line>
+      <![CDATA[Simple audit is done]]>
+    </line>
+    <line>
+      <![CDATA[pass: element is visible ]]>
+    </line>
+    <line>
+      <![CDATA[delete option is displaying]]>
+    </line>
+    <line>
+      <![CDATA[pass: element is visible ]]>
+    </line>
+    <line>
+      <![CDATA[delete popup is displaying]]>
+    </line>
+    <line>
+      <![CDATA[pass: element is visible ]]>
+    </line>
+    <line>
+      <![CDATA[Toast message is displaying]]>
+    </line>
+    <line>
+      <![CDATA[×
+check_circle
+Client Deleted successfully]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite" duration-ms="211721" started-at="2021-12-07T10:52:51 IST" finished-at="2021-12-07T10:56:23 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="211721" started-at="2021-12-07T10:52:51 IST" finished-at="2021-12-07T10:56:23 IST">
+      <class name="scripts.MainTest">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="precondition" is-config="true" duration-ms="20410" started-at="2021-12-07T10:52:51 IST" finished-at="2021-12-07T10:53:11 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://ui-test.creditrepaircloud.com/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[--window-size=1900,1080]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[--disable-notifications]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method status="PASS" signature="Login(java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="Login" duration-ms="191264" started-at="2021-12-07T10:53:11 IST" data-provider="clientdata" finished-at="2021-12-07T10:56:23 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,,,ncs9825@yopmail.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Login Successfully]]>
+            </line>
+            <line>
+              <![CDATA[Client module opened successfully]]>
+            </line>
+            <line>
+              <![CDATA[portalaccess on]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on save button]]>
+            </line>
+            <line>
+              <![CDATA[Client created successfully]]>
+            </line>
+            <line>
+              <![CDATA[Import/Audit button is visible in clientdashboard]]>
+            </line>
+            <line>
+              <![CDATA[Clients entered into import page]]>
+            </line>
+            <line>
+              <![CDATA[Import credit report tab is selected]]>
+            </line>
+            <line>
+              <![CDATA[popup is displaying]]>
+            </line>
+            <line>
+              <![CDATA[oneclick auto import tab is opened]]>
+            </line>
+            <line>
+              <![CDATA[username and password is autoentered]]>
+            </line>
+            <line>
+              <![CDATA[Running autoimport]]>
+            </line>
+            <line>
+              <![CDATA[Credit analysis popup is displaying]]>
+            </line>
+            <line>
+              <![CDATA[Simple audit is done]]>
+            </line>
+            <line>
+              <![CDATA[pass: element is visible ]]>
+            </line>
+            <line>
+              <![CDATA[delete option is displaying]]>
+            </line>
+            <line>
+              <![CDATA[pass: element is visible ]]>
+            </line>
+            <line>
+              <![CDATA[delete popup is displaying]]>
+            </line>
+            <line>
+              <![CDATA[pass: element is visible ]]>
+            </line>
+            <line>
+              <![CDATA[Toast message is displaying]]>
+            </line>
+            <line>
+              <![CDATA[×
+check_circle
+Client Deleted successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Login -->
+      </class> <!-- scripts.MainTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
