@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import org.testng.Reporter;
 
 public class AddClientPage extends LoginPage
@@ -73,53 +72,46 @@ public class AddClientPage extends LoginPage
 	{
 		
 	String clientdata[] = data.split(",");
-	//AddClientPage client = new AddClientPage(driver);
-//	username.sendKeys(clientdata[0]);
-//	password.sendKeys(clientdata[1]);
-//	loginbutton.click();
-//	String heading = heading.getText();
-//	
-//	Assert.assertTrue(heading.contains("Hello Credit Hero!"), "login failed");
-//	Reporter.log("Login Successfully");
 	
 	//Click on clients and add contacts
 	
 	clienttab.click();
 	Assert.assertTrue(clienttab.isEnabled());
 	Reporter.log("Client module opened successfully");
+	Assert.assertTrue(addclient.isDisplayed());
 	addclient.click();
 	
 	//enter first name
-	firstname.click();
-	WebElement fname = firstname;
-	fname.sendKeys(clientdata[2]);
+	Assert.assertTrue(firstname.isDisplayed());
+	firstname.sendKeys(clientdata[2]);
 	
 	//enter last name
-	lastname.click();
-	WebElement lname = lastname;
-	lname.sendKeys(clientdata[3]);
+	Assert.assertTrue(lastname.isDisplayed());
+	lastname.sendKeys(clientdata[3]);
 	
 	//enter email
-	emailid.click();
-	WebElement email = emailid;
-	email.sendKeys(clientdata[4]);
+	Assert.assertTrue(emailid.isDisplayed());
+	emailid.sendKeys(clientdata[4]);
 	
 	//scroll horizontal
 	((JavascriptExecutor)driver).executeScript("window.scrollBy(0,600)","");
 
-	
+	Assert.assertTrue(portalaccess.isDisplayed());
 	portalaccess.click();
+	Assert.assertTrue(portalaccessON.isDisplayed());
 	portalaccessON.click();
 	Reporter.log("portalaccess on");
 	
-	
+	Assert.assertTrue(agreement.isDisplayed());
 	agreement.click();
+	Assert.assertTrue(selectagreement.isDisplayed());
 	selectagreement.click();
+	Assert.assertTrue(savebutton.isDisplayed());
 	savebutton.click();
 	Reporter.log("Clicked on save button");
 	
 	
-	//Reporter.log(client.warningmessage.getText());
+	System.out.println(warningmessage.getText());
 	warningOkButton.click();
 	Assert.assertTrue(clientdashboard.isEnabled());
 	String text = clientname.getText();

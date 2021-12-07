@@ -30,14 +30,6 @@ public class BaseTest implements Autoconstantcrc
 {
 	public WebDriver driver;
 	
-	
-//	public Object[] dataprovider() 
-//	{
-//		  List<Object[]> result = Lists.newArrayList();
-//		  result.Arrays.asList(logindataprovider());
-//		  result.addAll(Arrays.asList(clientdataprovider()));
-//		  return result.toArray(new Object[result.size()][]);
-//	}
 	@DataProvider(name = "data")
     public String[] logindataprovider() throws IOException, ParseException  
     {

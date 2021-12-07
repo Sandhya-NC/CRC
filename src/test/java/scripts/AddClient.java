@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import generic.BaseTest;
 import pom.AddClientPage;
-import pom.ImportAuditPage;
+import pom.ImportSampleReport;
 
 public class AddClient extends BaseTest
 {
@@ -77,7 +77,7 @@ public class AddClient extends BaseTest
 	
 	
 	
-	ImportAuditPage importaudit = new ImportAuditPage(driver);
+	ImportSampleReport importaudit = new ImportSampleReport(driver);
 	Assert.assertTrue(importaudit.importauditbutton.isDisplayed());
 	Reporter.log("Import/Audit button is visible in clientdashboard");
 	importaudit.importauditbutton.click();

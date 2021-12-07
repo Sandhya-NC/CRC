@@ -5,14 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import org.testng.Reporter;
+
+import generic.BasePageCrc;
 
 import java.util.*;
 
-public class ImportAuditPage extends AddClientPage
+public class ImportSampleReport extends  BasePageCrc
 {
-	public ImportAuditPage(WebDriver driver) 
+
+
+	public ImportSampleReport(WebDriver driver) 
 	{
 		super(driver);
 		PageFactory.initElements(driver, this);
@@ -152,10 +155,11 @@ public class ImportAuditPage extends AddClientPage
 		importauditbutton.click();
 		Assert.assertTrue(importtab.isEnabled(), "Client not entered into importpage");
 		Reporter.log("Clients entered into import page");
-		AssertJUnit.assertTrue(importcreditreporttab.isEnabled());
+		Assert.assertTrue(importcreditreporttab.isEnabled());
 		Reporter.log("Import credit report tab is selected");
+		Assert.assertTrue(importcreditreportnowbutton.isDisplayed());
 		importcreditreportnowbutton.click();
-		importcreditreportheading.isDisplayed();
+		Assert.assertTrue(importcreditreportheading.isDisplayed());
 		Reporter.log("popup is displaying");
 	}
 	
@@ -207,7 +211,7 @@ public class ImportAuditPage extends AddClientPage
 		searchreportproviders.sendKeys("Sample Report");
 		String samplereporttext = samplereport.getText();
 		samplereport.click();
-		System.out.println(samplereporttext +"is selected");
+		System.out.println(samplereporttext + "is selected");
 		
 //		second
 //		WebElement reportproviders = driver.findElement(By.xpath("//span[@class='select2-results']"));

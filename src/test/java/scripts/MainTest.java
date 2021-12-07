@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import generic.BaseTest;
 import pom.AddClientPage;
 import pom.DeleteFlowPage;
-import pom.ImportAuditPage;
+import pom.ImportSampleReport;
 import pom.LoginPage;
 
 public class MainTest extends BaseTest
@@ -17,7 +17,7 @@ public class MainTest extends BaseTest
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
 			client.newclient(data);
-			ImportAuditPage importaudit = new ImportAuditPage(driver);
+			ImportSampleReport importaudit = new ImportSampleReport(driver);
 			importaudit.Clickonimport();
 			importaudit.oneclickimport(data);
 			DeleteFlowPage delete = new DeleteFlowPage(driver);

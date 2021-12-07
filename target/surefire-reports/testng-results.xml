@@ -67,12 +67,12 @@ check_circle
 Client Deleted successfully]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="211721" started-at="2021-12-07T10:52:51 IST" finished-at="2021-12-07T10:56:23 IST">
+  <suite name="Suite" duration-ms="78895" started-at="2021-12-07T17:08:29 IST" finished-at="2021-12-07T17:09:48 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="211721" started-at="2021-12-07T10:52:51 IST" finished-at="2021-12-07T10:56:23 IST">
+    <test name="Test" duration-ms="78895" started-at="2021-12-07T17:08:29 IST" finished-at="2021-12-07T17:09:48 IST">
       <class name="scripts.MainTest">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="precondition" is-config="true" duration-ms="20410" started-at="2021-12-07T10:52:51 IST" finished-at="2021-12-07T10:53:11 IST">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="precondition" is-config="true" duration-ms="12971" started-at="2021-12-07T17:08:29 IST" finished-at="2021-12-07T17:08:42 IST">
           <params>
             <param index="0">
               <value>
@@ -98,7 +98,7 @@ Client Deleted successfully]]>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="Login(java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="Login" duration-ms="191264" started-at="2021-12-07T10:53:11 IST" data-provider="clientdata" finished-at="2021-12-07T10:56:23 IST">
+        <test-method status="PASS" signature="CRC(java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="CRC" duration-ms="65869" started-at="2021-12-07T17:08:42 IST" data-provider="clientdata" finished-at="2021-12-07T17:09:48 IST">
           <params>
             <param index="0">
               <value>
@@ -173,7 +173,7 @@ check_circle
 Client Deleted successfully]]>
             </line>
           </reporter-output>
-        </test-method> <!-- Login -->
+        </test-method> <!-- CRC -->
       </class> <!-- scripts.MainTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

@@ -39,9 +39,11 @@ public class LoginPage extends BasePageCrc
 	public void LogintoApplication(String data) 
 	{
 		String users[] = data.split(",");
-		//LoginPage login = new LoginPage(driver);
+		Assert.assertTrue(username.isDisplayed());
 		username.sendKeys(users[0]);
+		Assert.assertTrue(password.isDisplayed());
 		password.sendKeys(users[1]);
+		Assert.assertTrue(loginbutton.isDisplayed());
 		loginbutton.click();
 		String headingtext = heading.getText();
 		

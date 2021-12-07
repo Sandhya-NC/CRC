@@ -7,15 +7,15 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import generic.BaseTest;
-import pom.ImportAuditPage;
+import pom.ImportSampleReport;
 
 public class ImportFlow extends BaseTest
 {
-	ImportAuditPage importaudit = new ImportAuditPage(driver);
+	ImportSampleReport importaudit = new ImportSampleReport(driver);
 	@Test
 	public void importflow() throws InterruptedException 
 	{
-		ImportAuditPage importaudit = new ImportAuditPage(driver);
+		ImportSampleReport importaudit = new ImportSampleReport(driver);
 		Assert.assertTrue(importaudit.importauditbutton.isDisplayed());
 		Reporter.log("Import/Audit button is visible in clientdashboard");
 		importaudit.importauditbutton.click();
@@ -71,7 +71,7 @@ public class ImportFlow extends BaseTest
 	
 	public void choosereportprovider() 
 	{
-		ImportAuditPage importaudit = new ImportAuditPage(driver);
+		ImportSampleReport importaudit = new ImportSampleReport(driver);
 		importaudit.choosereportproviderdropdown.click();
 		
 //		First 
@@ -131,7 +131,7 @@ public class ImportFlow extends BaseTest
 	
 	public void emailtheaudit() 
 	{
-		ImportAuditPage importaudit = new ImportAuditPage(driver);
+		ImportSampleReport importaudit = new ImportSampleReport(driver);
 		AssertJUnit.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
 		Reporter.log("Credit analysis popup is displaying");
 		importaudit.emailaudittoclientbutton.click();
@@ -143,7 +143,7 @@ public class ImportFlow extends BaseTest
 	
 	public void downloadtheauditpdf() 
 	{
-		ImportAuditPage importaudit = new ImportAuditPage(driver);
+		ImportSampleReport importaudit = new ImportSampleReport(driver);
 		AssertJUnit.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
 		Reporter.log("Credit analysis popup is displaying");
 		importaudit.pdfbutton.click();
