@@ -84,7 +84,7 @@ public class DeleteFlowPage extends LoginPage
 		elementvisibility(clientdeletesuccessfullytoastmessage);
 		Reporter.log("Toast message is displaying");
 		String toastmessage = clientdeletesuccessfullytoastmessage.getText();
-		System.out.println(toastmessage);
+		//System.out.println(toastmessage);
 		Reporter.log(toastmessage);
 	}
 	
