@@ -148,7 +148,6 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	public void Clickonimport() 
 	{
-		
 		Assert.assertTrue(importauditbutton.isDisplayed());
 		Reporter.log("Import/Audit button is visible in clientdashboard");
 		importauditbutton.click();
@@ -156,16 +155,17 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		Reporter.log("Clients entered into import page");
 		Assert.assertTrue(importcreditreporttab.isEnabled());
 		Reporter.log("Import credit report tab is selected");
+		Assert.assertTrue(importcreditreportnowbutton.isDisplayed());
 		importcreditreportnowbutton.click();
+		Reporter.log("clicked on import credit report nowbutton");
+		System.out.println(importcreditreportheading.getText());
 		importcreditreportheading.isDisplayed();
 		Reporter.log("popup is displaying");
-		
 	}
 	
 	
 	public void oneclickimport(String clientdata) throws InterruptedException 
 	{
-		
 		String userid[] = clientdata.split(",");
 		onclickautoimporttab.isSelected();
 		Reporter.log("oneclick auto import tab is opened");
@@ -193,6 +193,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 			Reporter.log("username and password is autoentered");
 		}
 		importandrunsimpleaudit();
+		
 
 		}
 		if(tagandsavependingreport.isDisplayed())
@@ -236,6 +237,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	public void editcredentialsonlyimport() 
 	{
+		Assert.assertTrue(idontneedanauditjustimportbuttonineditcredentials.isDisplayed());
 		idontneedanauditjustimportbuttonineditcredentials.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
@@ -243,6 +245,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	public void editcredentialsimportandrunsimpleaudit() 
 	{
+		Assert.assertTrue(importandrunsimpleauditbuttonineditcredentials.isDisplayed());
 		importandrunsimpleauditbuttonineditcredentials.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
@@ -250,6 +253,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		Reporter.log("Credit analysis popup is displaying");
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
+		Reporter.log(auditupdatedsuccessfullytoastmessage.getText());
 	}
 	
 	public void importandrunsimpleaudit() throws InterruptedException 
@@ -263,30 +267,33 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		Reporter.log("Credit analysis popup is displaying");
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
-		
 	}
 	
-	public void emailtheaudit() 
+	public void emailtheaudit() throws InterruptedException 
 	{
+		Assert.assertTrue(importandrunsimpleauditbutton.isDisplayed());
 		importandrunsimpleauditbutton.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
-		Assert.assertTrue(simpleauditpopupheading.isDisplayed());
-		Reporter.log("Credit analysis popup is displaying");
+//		Assert.assertTrue(simpleauditpopupheading.isDisplayed());
+//		Reporter.log("Credit analysis popup is displaying");
+		Assert.assertTrue(emailaudittoclientbutton.isDisplayed());
 		emailaudittoclientbutton.click();
 		Reporter.log("Audit report sent to the client mail");
+		Thread.sleep(3000);
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
-		
 	}
 	
 	public void downloadtheauditpdf() 
 	{
+		
 		importandrunsimpleauditbutton.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
 		Assert.assertTrue(simpleauditpopupheading.isDisplayed());
 		Reporter.log("Credit analysis popup is displaying");
+		Assert.assertTrue(pdfbutton.isDisplayed());
 		pdfbutton.click();
 		Reporter.log("Downloaded the Audit report pdf");
 		nextbutton.click();	
@@ -296,7 +303,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	public void dontneedanauditjustimport() 
 	{
-		
+		Assert.assertTrue(idontneedanauditjustimportbutton.isDisplayed());
 		idontneedanauditjustimportbutton.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");

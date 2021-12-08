@@ -26,6 +26,9 @@
       <![CDATA[Import credit report tab is selected]]>
     </line>
     <line>
+      <![CDATA[clicked on import credit report nowbutton]]>
+    </line>
+    <line>
       <![CDATA[popup is displaying]]>
     </line>
     <line>
@@ -67,12 +70,12 @@ check_circle
 Client Deleted successfully]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="78895" started-at="2021-12-07T17:08:29 IST" finished-at="2021-12-07T17:09:48 IST">
+  <suite name="Suite" duration-ms="78354" started-at="2021-12-08T13:01:02 IST" finished-at="2021-12-08T13:02:20 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="78895" started-at="2021-12-07T17:08:29 IST" finished-at="2021-12-07T17:09:48 IST">
+    <test name="Test" duration-ms="78354" started-at="2021-12-08T13:01:02 IST" finished-at="2021-12-08T13:02:20 IST">
       <class name="scripts.MainTest">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="precondition" is-config="true" duration-ms="12971" started-at="2021-12-07T17:08:29 IST" finished-at="2021-12-07T17:08:42 IST">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="precondition" is-config="true" duration-ms="14975" started-at="2021-12-08T13:01:02 IST" finished-at="2021-12-08T13:01:17 IST">
           <params>
             <param index="0">
               <value>
@@ -98,7 +101,7 @@ Client Deleted successfully]]>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="CRC(java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="CRC" duration-ms="65869" started-at="2021-12-07T17:08:42 IST" data-provider="clientdata" finished-at="2021-12-07T17:09:48 IST">
+        <test-method status="PASS" signature="CRC(java.lang.String)[pri:0, instance:scripts.MainTest@6f1fba17]" name="CRC" duration-ms="63329" started-at="2021-12-08T13:01:17 IST" data-provider="clientdata" finished-at="2021-12-08T13:02:20 IST">
           <params>
             <param index="0">
               <value>
@@ -130,6 +133,9 @@ Client Deleted successfully]]>
             </line>
             <line>
               <![CDATA[Import credit report tab is selected]]>
+            </line>
+            <line>
+              <![CDATA[clicked on import credit report nowbutton]]>
             </line>
             <line>
               <![CDATA[popup is displaying]]>

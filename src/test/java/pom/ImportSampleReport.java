@@ -1,7 +1,9 @@
 package pom;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -9,6 +11,7 @@ import org.testng.Reporter;
 
 import generic.BasePageCrc;
 
+import java.awt.Window;
 import java.util.*;
 
 public class ImportSampleReport extends  BasePageCrc
@@ -94,10 +97,10 @@ public class ImportSampleReport extends  BasePageCrc
 	@FindBy(xpath = "//input[@id='audit_name']")
 	public WebElement auditname;
 	
-	@FindBy(xpath = "(//span[@class='error-text'])[1]")
+	@FindBy(xpath = "//div[@id='flashmessage']")
 	public WebElement auditupdatedsuccessfullytoastmessage;
 	
-	@FindBy(xpath = "(//div[@class=' tooltip-active float-right'])[3]")
+	@FindBy(xpath = "(//div[@class='  float-right'])[2]")
 	public WebElement emailaudittoclientbutton;
 	
 	@FindBy(xpath = "//button[@value='Tag And Save Pending Report']")
@@ -159,7 +162,9 @@ public class ImportSampleReport extends  BasePageCrc
 		Reporter.log("Import credit report tab is selected");
 		Assert.assertTrue(importcreditreportnowbutton.isDisplayed());
 		importcreditreportnowbutton.click();
-		Assert.assertTrue(importcreditreportheading.isDisplayed());
+		Reporter.log("clicked on import credit report nowbutton");
+		System.out.println(importcreditreportheading.getText());
+		importcreditreportheading.isDisplayed();
 		Reporter.log("popup is displaying");
 	}
 	
@@ -193,6 +198,7 @@ public class ImportSampleReport extends  BasePageCrc
 			Reporter.log("username and password is autoentered");
 		}
 		importandrunsimpleaudit();
+		
 
 		}
 		if(tagandsavependingreport.isDisplayed())
@@ -204,10 +210,11 @@ public class ImportSampleReport extends  BasePageCrc
 	
 	public void choosereportprovider() 
 	{
-		
+		Assert.assertTrue(choosereportproviderdropdown.isDisplayed());
 		choosereportproviderdropdown.click();
 		
 //		First 
+		Assert.assertTrue(searchreportproviders.isDisplayed());
 		searchreportproviders.sendKeys("Sample Report");
 		String samplereporttext = samplereport.getText();
 		samplereport.click();
@@ -236,6 +243,7 @@ public class ImportSampleReport extends  BasePageCrc
 	
 	public void editcredentialsonlyimport() 
 	{
+		Assert.assertTrue(idontneedanauditjustimportbuttonineditcredentials.isDisplayed());
 		idontneedanauditjustimportbuttonineditcredentials.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
@@ -243,6 +251,7 @@ public class ImportSampleReport extends  BasePageCrc
 	
 	public void editcredentialsimportandrunsimpleaudit() 
 	{
+		Assert.assertTrue(importandrunsimpleauditbuttonineditcredentials.isDisplayed());
 		importandrunsimpleauditbuttonineditcredentials.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
@@ -250,6 +259,7 @@ public class ImportSampleReport extends  BasePageCrc
 		Reporter.log("Credit analysis popup is displaying");
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
+		Reporter.log(auditupdatedsuccessfullytoastmessage.getText());
 	}
 	
 	public void importandrunsimpleaudit() throws InterruptedException 
@@ -266,15 +276,18 @@ public class ImportSampleReport extends  BasePageCrc
 		
 	}
 	
-	public void emailtheaudit() 
+	public void emailtheaudit() throws InterruptedException 
 	{
+		Assert.assertTrue(importandrunsimpleauditbutton.isDisplayed());
 		importandrunsimpleauditbutton.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
-		Assert.assertTrue(simpleauditpopupheading.isDisplayed());
-		Reporter.log("Credit analysis popup is displaying");
+//		Assert.assertTrue(simpleauditpopupheading.isDisplayed());
+//		Reporter.log("Credit analysis popup is displaying");
+		Assert.assertTrue(emailaudittoclientbutton.isDisplayed());
 		emailaudittoclientbutton.click();
 		Reporter.log("Audit report sent to the client mail");
+		Thread.sleep(3000);
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
 	}
@@ -287,6 +300,7 @@ public class ImportSampleReport extends  BasePageCrc
 		Reporter.log("Running autoimport");
 		Assert.assertTrue(simpleauditpopupheading.isDisplayed());
 		Reporter.log("Credit analysis popup is displaying");
+		Assert.assertTrue(pdfbutton.isDisplayed());
 		pdfbutton.click();
 		Reporter.log("Downloaded the Audit report pdf");
 		nextbutton.click();	
@@ -296,7 +310,7 @@ public class ImportSampleReport extends  BasePageCrc
 	
 	public void dontneedanauditjustimport() 
 	{
-		
+		Assert.assertTrue(idontneedanauditjustimportbutton.isDisplayed());
 		idontneedanauditjustimportbutton.click();
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
