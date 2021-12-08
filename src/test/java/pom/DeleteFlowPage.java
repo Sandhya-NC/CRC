@@ -58,7 +58,7 @@ public class DeleteFlowPage extends LoginPage
 		//DeleteFlowPage delete = new DeleteFlowPage(driver);
 		String email[] = clientdata.split(",");
 		clienttab.click();
-		clientsearchbar.sendKeys(email[7]);
+		clientsearchbar.sendKeys(email[15]);
 		clientsearchbutton.click();
 		Thread.sleep(2000);
 		Assert.assertTrue(clientname.isDisplayed(), "No result found");

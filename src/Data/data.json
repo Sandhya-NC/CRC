@@ -14,8 +14,16 @@
 		"FirstName": "Enter",
 		"LastName": "client",
 		"Email":"ncs9825@yopmail.com",
-		"userid": "",
-		"pwd":"",
+		"PrivacyGuardUsername":"danielrosen",
+		"PrivacyGuardPassword":"flatop63",
+		"PrivacyGuardSSNNumber":"3944",
+		"IdentityIQUsername": "daniel@credit-aid.com",
+		"IdentityIQPassword":"flatop63",
+		"IdentityIQSSNNumber":"3944",
+		"SmartCreditUsername": "daniel@credit-aid.com",
+		"SmartCreditPassword":"flatop63",
+		"MyFreeScoreNowUsername": "dr@creditrepaircloud.com",
+		"MyFreeScoreNowPassword":"flatop63",
 		"email":"ncs9825@yopmail.com"
 	}
 	]

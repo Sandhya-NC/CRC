@@ -69,11 +69,19 @@ public class BaseTest implements Autoconstantcrc
 			String fname = (String) client.get("FirstName");
 			String lname = (String) client.get("LastName");
 			String email = (String) client.get("Email");
-			String userid = (String) client.get("userid");
-			String passcode = (String) client.get("pwd");
+			String PrivacyGuardUsername = (String) client.get("PrivacyGuardUsername");
+			String PrivacyGuardPassword = (String) client.get("PrivacyGuardPassword");
+			String PrivacyGuardSSNNumber = (String) client.get("PrivacyGuardSSNNumber");
+			String IdentityIQUsername = (String) client.get("IdentityIQUsername");
+			String IdentityIQPassword = (String) client.get("IdentityIQPassword");
+			String IdentityIQSSNNumber = (String) client.get("IdentityIQSSNNumber");
+			String SmartCreditUsername = (String) client.get("SmartCreditUsername");
+			String SmartCreditPassword = (String) client.get("SmartCreditPassword");
+			String MyFreeScoreNowUsername = (String) client.get("MyFreeScoreNowUsername");
+			String MyFreeScoreNowPassword = (String) client.get("MyFreeScoreNowPassword");
 			String mail = (String) client.get("email");
 			
-			arr[i]= username+","+pwd+","+fname+","+lname+","+email+","+userid+","+passcode+","+mail;
+			arr[i]= username+","+pwd+","+fname+","+lname+","+email+","+PrivacyGuardUsername+","+PrivacyGuardPassword+","+PrivacyGuardSSNNumber+","+IdentityIQUsername+","+IdentityIQPassword+","+IdentityIQSSNNumber+","+SmartCreditUsername+","+SmartCreditPassword+","+MyFreeScoreNowUsername+","+MyFreeScoreNowPassword+","+mail;
 		}
 		return arr;
 		

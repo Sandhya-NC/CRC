@@ -2,6 +2,7 @@ package pom;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +51,9 @@ public class ImportPrivacyGuard extends BasePageCrc
 	
 	@FindBy(id = "auto_vcr_password")
 	public WebElement password;
+	
+	@FindBy(xpath = "//input[@id='auto_vcr_securityword']")
+	public WebElement SSNNumber;
 	
 	@FindBy(xpath = "(//a[@id='auto_btnsubmit_without_pending'])[2]")
 	public WebElement idontneedanauditjustimportbutton;
@@ -181,15 +185,17 @@ public class ImportPrivacyGuard extends BasePageCrc
 		{
 		choosereportprovider();
 		
-		String user = username.getText();
-		System.out.println(user);
-		if(user==null)
+//		String user = username.getText();
+//		System.out.println(user);
+		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,900)", username);
+		if(username.getAttribute("value")==null)
 		{
 			Reporter.log("username is empty");
 			username.sendKeys(userid[5]);
 			password.sendKeys(userid[6]);
+			SSNNumber.sendKeys(userid[7]);
 		}
-		else if(user!=null)
+		else if(username!=null)
 		{
 			Reporter.log("username and password is autoentered");
 		}

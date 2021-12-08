@@ -11,15 +11,17 @@ import org.testng.Reporter;
 
 import generic.BasePageCrc;
 
-public class ImportMyIdentityIQ extends BasePageCrc
+public class ImportMyFreeScoreNow extends BasePageCrc
 {
-	public ImportMyIdentityIQ(WebDriver driver) 
+	public ImportMyFreeScoreNow(WebDriver driver) 
 	{
 		super(driver);
 		PageFactory.initElements(driver, this);
 		
 	}
 	
+	
+
 	@FindBy(xpath = "(//li[@class='nav-item'])[2]")
 	public WebElement importtab;
 	
@@ -50,9 +52,6 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	@FindBy(id = "auto_vcr_password")
 	public WebElement password;
 	
-	@FindBy(xpath = "//input[@id='auto_vcr_securityword']")
-	public WebElement SSNNumber;
-	
 	@FindBy(xpath = "(//a[@id='auto_btnsubmit_without_pending'])[2]")
 	public WebElement idontneedanauditjustimportbutton;
 	
@@ -75,7 +74,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	public WebElement searchreportproviders;
 	
 	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']")
-	public WebElement MyidentityIq;
+	public WebElement MyFreeScoreNow;
 	
 	@FindBy(xpath = "//div[@class='text-center']")
 	public WebElement autoimportrunning;
@@ -188,9 +187,8 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		if(user==null)
 		{
 			Reporter.log("username is empty");
-			username.sendKeys(userid[8]);
-			password.sendKeys(userid[9]);
-			SSNNumber.sendKeys(userid[10]);
+			username.sendKeys(userid[13]);
+			password.sendKeys(userid[14]);
 		}
 		else if(user!=null)
 		{
@@ -213,10 +211,10 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		choosereportproviderdropdown.click();
 		
 //		First 
-		searchreportproviders.sendKeys("IdentityIq");
-		String myidentityiqtext = MyidentityIq.getText();
-		MyidentityIq.click();
-		System.out.println(myidentityiqtext +"is selected");
+		searchreportproviders.sendKeys("MyFreeScoreNow");
+		String myfreescoretext = MyFreeScoreNow.getText();
+		MyFreeScoreNow.click();
+		System.out.println(myfreescoretext +"is selected");
 		
 //		second
 //		WebElement reportproviders = driver.findElement(By.xpath("//span[@class='select2-results']"));
@@ -225,7 +223,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		
 //		third
 //		List<WebElement> reportproviderslist = driver.findElements(By.xpath("//span[@class='select2-results']"));
-//		
+		
 //		for(WebElement element:reportproviderslist)
 //		{
 //			String innerhtml = element.getText();
@@ -271,6 +269,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		Reporter.log("Credit analysis popup is displaying");
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
+		
 	}
 	
 	public void emailtheaudit() throws InterruptedException 
@@ -315,31 +314,6 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	
 	
-	public void previewcreditreport() 
-	{
-	
-		elementvisibility(previewcreditreportheading);
-		//Assert.assertTrue(importaudit.previewcreditreportheading.isDisplayed());
-		Reporter.log("client entered into preview credit report page");
-		System.out.println(status);
-		for(int i=0;i<status.size();i++) 
-		{
-		   WebElement statusvalue = status.get(i);
-		   String innerhtml = statusvalue.getAttribute("value");
-		   if(innerhtml.contentEquals("Negative"))
-		   {
-			   
-			   
-			   
-		   }
-	
-	
+		
 
-		}
-		
-		
-		
-		
-	}
-	
 }

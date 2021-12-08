@@ -9,12 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">78,354</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">43,756</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">scripts.MainTest</td><td><a href="#m0">CRC</a></td><td rowspan="1">1638948677198</td><td rowspan="1">63329</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">scripts.MainTest</td><td><a href="#m0">CRC</a></td><td rowspan="1">1638965492205</td><td rowspan="1">30494</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">scripts.MainTest#CRC</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,,,ncs9825@yopmail.com</td></tr><tr><th>Messages</th></tr><tr><td><div class="messages">Login Successfully<br/>Client module opened successfully<br/>portalaccess on<br/>Clicked on save button<br/>Client created successfully<br/>Import/Audit button is visible in clientdashboard<br/>Clients entered into import page<br/>Import credit report tab is selected<br/>clicked on import credit report nowbutton<br/>popup is displaying<br/>oneclick auto import tab is opened<br/>username and password is autoentered<br/>Running autoimport<br/>Credit analysis popup is displaying<br/>Simple audit is done<br/>pass: element is visible <br/>delete option is displaying<br/>pass: element is visible <br/>delete popup is displaying<br/>pass: element is visible <br/>Toast message is displaying<br/>×
-check_circle
-Client Deleted successfully</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">scripts.MainTest#CRC</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-aid.com,flatop63,3944,daniel@credit-aid.com,flatop63,dr@creditrepaircloud.com,flatop63,ncs9825@yopmail.com</td></tr><tr><th>Messages</th></tr><tr><td><div class="messages">Login Successfully<br/>Client module opened successfully<br/>portalaccess on<br/>Clicked on save button<br/>Client created successfully<br/>Import/Audit button is visible in clientdashboard<br/>Clients entered into import page<br/>Import credit report tab is selected<br/>clicked on import credit report nowbutton<br/>popup is displaying<br/>oneclick auto import tab is opened<br/>username and password is autoentered</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at pom.ImportPrivacyGuard.importandrunsimpleaudit(ImportPrivacyGuard.java:270)
+	at pom.ImportPrivacyGuard.oneclickimport(ImportPrivacyGuard.java:202)
+	at scripts.MainTest.CRC(MainTest.java:26)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

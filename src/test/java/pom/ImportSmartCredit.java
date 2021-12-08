@@ -188,8 +188,8 @@ public class ImportSmartCredit extends BasePageCrc
 		if(user==null)
 		{
 			Reporter.log("username is empty");
-			username.sendKeys(userid[5]);
-			password.sendKeys(userid[6]);
+			username.sendKeys(userid[11]);
+			password.sendKeys(userid[12]);
 		}
 		else if(user!=null)
 		{
@@ -212,7 +212,7 @@ public class ImportSmartCredit extends BasePageCrc
 		choosereportproviderdropdown.click();
 		
 //		First 
-		searchreportproviders.sendKeys("Smart Credit");
+		searchreportproviders.sendKeys("SmartCredit");
 		String smartcredittext = smartcredit.getText();
 		smartcredit.click();
 		System.out.println(smartcredittext +"is selected");
