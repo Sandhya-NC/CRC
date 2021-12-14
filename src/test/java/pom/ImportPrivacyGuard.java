@@ -47,10 +47,10 @@ public class ImportPrivacyGuard extends BasePageCrc
 	public WebElement choosereportproviderdropdown;
 	
 	@FindBy(id = "auto_vcr_username")
-	public WebElement username;
+	public WebElement reportproviderusername;
 	
 	@FindBy(id = "auto_vcr_password")
-	public WebElement password;
+	public WebElement reportproviderpassword;
 	
 	@FindBy(xpath = "//input[@id='auto_vcr_securityword']")
 	public WebElement SSNNumber;
@@ -184,18 +184,18 @@ public class ImportPrivacyGuard extends BasePageCrc
 		else
 		{
 		choosereportprovider();
-		
-//		String user = username.getText();
-//		System.out.println(user);
-		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,900)", username);
-		if(username.getAttribute("value")==null)
+		Thread.sleep(2000);
+		String user = reportproviderusername.getText();
+		System.out.println(user);
+		//((JavascriptExecutor)driver).executeScript("window.scrollBy(0,900)", "");
+		if(reportproviderusername.getAttribute("innerHTML")==null)
 		{
 			Reporter.log("username is empty");
-			username.sendKeys(userid[5]);
-			password.sendKeys(userid[6]);
+			reportproviderusername.sendKeys(userid[5]);
+			reportproviderpassword.sendKeys(userid[6]);
 			SSNNumber.sendKeys(userid[7]);
 		}
-		else if(username!=null)
+		else if(reportproviderusername!=null)
 		{
 			Reporter.log("username and password is autoentered");
 		}
@@ -272,6 +272,7 @@ public class ImportPrivacyGuard extends BasePageCrc
 //		elementvisibility(simpleauditpopupheading);
 //		Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
 		Reporter.log("Credit analysis popup is displaying");
+		Thread.sleep(80000);
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
 		

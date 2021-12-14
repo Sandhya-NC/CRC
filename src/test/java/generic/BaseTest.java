@@ -101,7 +101,7 @@ public class BaseTest implements Autoconstantcrc
 			options.addArguments(WindowSize);
 			options.addArguments(notifications);
 			driver = new ChromeDriver(options);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(url);
 			Dimension size = driver.manage().window().getSize();
 			System.out.println(size);

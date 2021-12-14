@@ -48,10 +48,10 @@ public class ImportSmartCredit extends BasePageCrc
 	public WebElement choosereportproviderdropdown;
 	
 	@FindBy(id = "auto_vcr_username")
-	public WebElement username;
+	public WebElement reportproviderusername;
 	
 	@FindBy(id = "auto_vcr_password")
-	public WebElement password;
+	public WebElement reportproviderpassword;
 	
 	@FindBy(xpath = "(//a[@id='auto_btnsubmit_without_pending'])[2]")
 	public WebElement idontneedanauditjustimportbutton;
@@ -146,6 +146,11 @@ public class ImportSmartCredit extends BasePageCrc
 	@FindBy(xpath = "//a[@class='m-b-24 btn green-btn-lined form-btn waves-effect waves-light']")
 	public WebElement deletependingreportCancelbutton;
 	
+	@FindBy(xpath = "//p[text()=' Encountered an error when importing']")
+	public WebElement error;
+	
+	@FindBy(xpath = "//div[@class='crc-imer-body']")
+	public WebElement errormessage;
 	
 	
 	
@@ -183,26 +188,15 @@ public class ImportSmartCredit extends BasePageCrc
 		{
 		choosereportprovider();
 		
-		String user = username.getText();
-		System.out.println(user);
-		if(user==null)
-		{
-			Reporter.log("username is empty");
-			username.sendKeys(userid[11]);
-			password.sendKeys(userid[12]);
-		}
-		else if(user!=null)
-		{
-			Reporter.log("username and password is autoentered");
-		}
+
+			reportproviderusername.sendKeys(userid[11]);
+			reportproviderpassword.sendKeys(userid[12]);
+		
 		importandrunsimpleaudit();
 		
 
 		}
-		if(tagandsavependingreport.isDisplayed())
-		{
-		clickpreview.click();
-		}
+
 	}
 	
 	
@@ -265,11 +259,20 @@ public class ImportSmartCredit extends BasePageCrc
 		Thread.sleep(2000);
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
+		elementvisibility(error);
+		if(error.isDisplayed())
+		{
+			System.out.println(errormessage.getText());
+			
+		}
 //		elementvisibility(simpleauditpopupheading);
 //		Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
+		else
+		{
 		Reporter.log("Credit analysis popup is displaying");
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
+		}
 		
 	}
 	

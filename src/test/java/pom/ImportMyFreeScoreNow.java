@@ -47,10 +47,10 @@ public class ImportMyFreeScoreNow extends BasePageCrc
 	public WebElement choosereportproviderdropdown;
 	
 	@FindBy(id = "auto_vcr_username")
-	public WebElement username;
+	public WebElement reportproviderusername;
 	
 	@FindBy(id = "auto_vcr_password")
-	public WebElement password;
+	public WebElement reportproviderpassword;
 	
 	@FindBy(xpath = "(//a[@id='auto_btnsubmit_without_pending'])[2]")
 	public WebElement idontneedanauditjustimportbutton;
@@ -145,7 +145,11 @@ public class ImportMyFreeScoreNow extends BasePageCrc
 	@FindBy(xpath = "//a[@class='m-b-24 btn green-btn-lined form-btn waves-effect waves-light']")
 	public WebElement deletependingreportCancelbutton;
 	
+	@FindBy(xpath = "//p[text()=' Encountered an error when importing']")
+	public WebElement error;
 	
+	@FindBy(xpath = "//div[@class='crc-imer-body']")
+	public WebElement errormessage;
 	
 	
 	public void Clickonimport() 
@@ -182,26 +186,13 @@ public class ImportMyFreeScoreNow extends BasePageCrc
 		{
 		choosereportprovider();
 		
-		String user = username.getText();
-		System.out.println(user);
-		if(user==null)
-		{
-			Reporter.log("username is empty");
-			username.sendKeys(userid[13]);
-			password.sendKeys(userid[14]);
-		}
-		else if(user!=null)
-		{
-			Reporter.log("username and password is autoentered");
-		}
-		importandrunsimpleaudit();
-		
+			reportproviderusername.sendKeys(userid[13]);
+			reportproviderpassword.sendKeys(userid[14]);
 
+		importandrunsimpleaudit();
+	
 		}
-		if(tagandsavependingreport.isDisplayed())
-		{
-		clickpreview.click();
-		}
+		
 	}
 	
 	
@@ -216,25 +207,7 @@ public class ImportMyFreeScoreNow extends BasePageCrc
 		MyFreeScoreNow.click();
 		System.out.println(myfreescoretext +"is selected");
 		
-//		second
-//		WebElement reportproviders = driver.findElement(By.xpath("//span[@class='select2-results']"));
-//		Select selectreportproviders = new Select(reportproviders);
-//		selectreportproviders.selectByVisibleText("Sample Report");
-		
-//		third
-//		List<WebElement> reportproviderslist = driver.findElements(By.xpath("//span[@class='select2-results']"));
-		
-//		for(WebElement element:reportproviderslist)
-//		{
-//			String innerhtml = element.getText();
-//			if(innerhtml.contentEquals("Sample Report"))
-//			{
-//				element.click();
-//				Reporter.log(element+"Report provider selected");
-//				break;
-//			}
-//			System.out.println("reportproviderslist==="+innerhtml);
-//		}
+//		
 	}
 	
 	public void editcredentialsonlyimport() 
@@ -264,11 +237,18 @@ public class ImportMyFreeScoreNow extends BasePageCrc
 		Thread.sleep(2000);
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
-//		elementvisibility(simpleauditpopupheading);
-//		Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
+		elementvisibility(error);
+		if(error.isDisplayed())
+		{
+			System.out.println(errormessage.getText());
+			
+		}
+		else
+		{
 		Reporter.log("Credit analysis popup is displaying");
 		nextbutton.click();	
 		Reporter.log("Simple audit is done");
+		}
 		
 	}
 	

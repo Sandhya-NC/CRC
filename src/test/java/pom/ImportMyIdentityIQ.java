@@ -2,10 +2,14 @@ package pom;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -45,10 +49,10 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	public WebElement choosereportproviderdropdown;
 	
 	@FindBy(id = "auto_vcr_username")
-	public WebElement username;
+	public WebElement reportproviderusername;
 	
 	@FindBy(id = "auto_vcr_password")
-	public WebElement password;
+	public WebElement reportproviderpassword;
 	
 	@FindBy(xpath = "//input[@id='auto_vcr_securityword']")
 	public WebElement SSNNumber;
@@ -88,6 +92,9 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	@FindBy(xpath = "(//button[@class='btn green-btn-lined2 waves-effect waves-light h-40 p-t-b-8 m-r-16'])[2]")
 	public WebElement pdfbutton;
+	
+//	@FindBy(xpath = "(//div[@class='col-12'])[26]//p//button[3]")
+//	public WebElement nextbutton;
 	
 	@FindBy(xpath = "//button[@class='btn green-btn padding-btn3 waves-effect waves-light h-40 p-t-b-8']")
 	public WebElement nextbutton;
@@ -183,19 +190,22 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		{
 		choosereportprovider();
 		
-		String user = username.getText();
-		System.out.println(user);
-		if(user==null)
-		{
-			Reporter.log("username is empty");
-			username.sendKeys(userid[8]);
-			password.sendKeys(userid[9]);
+//		String user = reportproviderusername.getText();
+//		System.out.println(user);
+//		if(user==null)
+//		{
+//			Reporter.log("username is empty");
+			Thread.sleep(3000);
+			reportproviderusername.sendKeys(userid[8]);
+			Thread.sleep(3000);
+			reportproviderpassword.sendKeys(userid[9]);
+			Thread.sleep(3000);
 			SSNNumber.sendKeys(userid[10]);
-		}
-		else if(user!=null)
-		{
-			Reporter.log("username and password is autoentered");
-		}
+//		}
+//		else if(user!=null)
+//		{
+//			Reporter.log("username and password is autoentered");
+//		}
 		importandrunsimpleaudit();
 		
 
@@ -262,15 +272,21 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	
 	public void importandrunsimpleaudit() throws InterruptedException 
 	{
-		importandrunsimpleauditbutton.click();
-		Thread.sleep(2000);
-		Assert.assertTrue(autoimportrunning.isDisplayed());
-		Reporter.log("Running autoimport");
-//		elementvisibility(simpleauditpopupheading);
-//		Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
-		Reporter.log("Credit analysis popup is displaying");
-		nextbutton.click();	
-		Reporter.log("Simple audit is done");
+
+			importandrunsimpleauditbutton.click();
+			Thread.sleep(2000);
+			Assert.assertTrue(autoimportrunning.isDisplayed());
+			Reporter.log("Running autoimport");
+//			elementvisibility(simpleauditpopupheading);
+//			Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
+			Reporter.log("Credit analysis popup is displaying");
+//			WebDriverWait element = new WebDriverWait(driver,100); 
+//			element.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn green-btn padding-btn3 waves-effect waves-light h-40 p-t-b-8']")));
+			Thread.sleep(80000);
+			nextbutton.click();	
+			Reporter.log("Simple audit is done");
+			
+		
 	}
 	
 	public void emailtheaudit() throws InterruptedException 
