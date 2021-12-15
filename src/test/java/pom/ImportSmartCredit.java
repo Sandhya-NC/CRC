@@ -152,6 +152,14 @@ public class ImportSmartCredit extends BasePageCrc
 	@FindBy(xpath = "//div[@class='crc-imer-body']")
 	public WebElement errormessage;
 	
+	@FindBy(xpath = "(//button[@class='close'])[14]")
+	public WebElement closebutton;
+	
+	@FindBy(xpath = "//a[@class='m-r-20 cancel']")
+	public WebElement dontsavebutton;
+	
+	@FindBy(xpath = "(//a[@class=' m-r-20 btn green-btn form-btn waves-effect waves-light'])[2]")
+	public WebElement savebutton;
 	
 	
 	public void Clickonimport() 
@@ -196,6 +204,18 @@ public class ImportSmartCredit extends BasePageCrc
 		
 
 		}
+		try
+		{
+			if(tagandsavependingreport.isDisplayed())
+			{
+			clickpreview.click();
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println("getting error");
+		}
+		
 
 	}
 	
@@ -263,15 +283,19 @@ public class ImportSmartCredit extends BasePageCrc
 		if(error.isDisplayed())
 		{
 			System.out.println(errormessage.getText());
+			closebutton.click();
+			Thread.sleep(50000);
+			dontsavebutton.click();
 			
 		}
-//		elementvisibility(simpleauditpopupheading);
-//		Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
 		else
 		{
-		Reporter.log("Credit analysis popup is displaying");
-		nextbutton.click();	
-		Reporter.log("Simple audit is done");
+//			elementvisibility(simpleauditpopupheading);
+//			Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
+			Reporter.log("Credit analysis popup is displaying");
+			Thread.sleep(80000);
+			nextbutton.click();	
+			Reporter.log("Simple audit is done");
 		}
 		
 	}

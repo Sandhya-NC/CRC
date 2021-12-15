@@ -153,7 +153,20 @@ public class ImportMyIdentityIQ extends BasePageCrc
 	@FindBy(xpath = "//a[@class='m-b-24 btn green-btn-lined form-btn waves-effect waves-light']")
 	public WebElement deletependingreportCancelbutton;
 	
+	@FindBy(xpath = "//p[text()=' Encountered an error when importing']")
+	public WebElement error;
 	
+	@FindBy(xpath = "//div[@class='crc-imer-body']")
+	public WebElement errormessage;
+	
+	@FindBy(xpath = "(//button[@class='close'])[14]")
+	public WebElement closebutton;
+	
+	@FindBy(xpath = "//a[@class='m-r-20 cancel']")
+	public WebElement dontsavebutton;
+	
+	@FindBy(xpath = "(//a[@class=' m-r-20 btn green-btn form-btn waves-effect waves-light'])[2]")
+	public WebElement savebutton;
 	
 	
 	public void Clickonimport() 
@@ -210,9 +223,16 @@ public class ImportMyIdentityIQ extends BasePageCrc
 		
 
 		}
-		if(tagandsavependingreport.isDisplayed())
+		try
 		{
-		clickpreview.click();
+			if(tagandsavependingreport.isDisplayed())
+			{
+			clickpreview.click();
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println("getting error");
 		}
 	}
 	
@@ -277,14 +297,23 @@ public class ImportMyIdentityIQ extends BasePageCrc
 			Thread.sleep(2000);
 			Assert.assertTrue(autoimportrunning.isDisplayed());
 			Reporter.log("Running autoimport");
-//			elementvisibility(simpleauditpopupheading);
-//			Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
-			Reporter.log("Credit analysis popup is displaying");
-//			WebDriverWait element = new WebDriverWait(driver,100); 
-//			element.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn green-btn padding-btn3 waves-effect waves-light h-40 p-t-b-8']")));
-			Thread.sleep(80000);
-			nextbutton.click();	
-			Reporter.log("Simple audit is done");
+			if(error.isDisplayed())
+			{
+				System.out.println(errormessage.getText());
+				closebutton.click();
+				Thread.sleep(50000);
+				dontsavebutton.click();
+				
+			}
+			else
+			{
+//				elementvisibility(simpleauditpopupheading);
+//				Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
+				Reporter.log("Credit analysis popup is displaying");
+				Thread.sleep(80000);
+				nextbutton.click();	
+				Reporter.log("Simple audit is done");
+			}
 			
 		
 	}

@@ -6,10 +6,13 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://ui-test.creditrepaircloud.com/"/>
     <parameter name="notifications" value="--disable-notifications"/>
+    <parameter name="email" value="ncs9825@yopmail.com"/>
     <classes>
       <class name="scripts.MainTest">
         <methods>
-          <include name="CRC" invocation-numbers="0"/>
+          <include name="delete"/>
+          <include name="SmartCredit"/>
+          <include name="PrivacyGuard"/>
           <include name="precondition"/>
         </methods>
       </class> <!-- scripts.MainTest -->

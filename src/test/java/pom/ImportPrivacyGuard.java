@@ -148,8 +148,20 @@ public class ImportPrivacyGuard extends BasePageCrc
 	@FindBy(xpath = "//a[@class='m-b-24 btn green-btn-lined form-btn waves-effect waves-light']")
 	public WebElement deletependingreportCancelbutton;
 	
+	@FindBy(xpath = "//p[text()=' Encountered an error when importing']")
+	public WebElement error;
 	
+	@FindBy(xpath = "//div[@class='crc-imer-body']")
+	public WebElement errormessage;
 	
+	@FindBy(xpath = "(//button[@class='close'])[14]")
+	public WebElement closebutton;
+	
+	@FindBy(xpath = "//a[@class='m-r-20 cancel']")
+	public WebElement dontsavebutton;
+	
+	@FindBy(xpath = "(//a[@class=' m-r-20 btn green-btn form-btn waves-effect waves-light'])[2]")
+	public WebElement savebutton;
 	
 	public void Clickonimport() 
 	{
@@ -184,29 +196,37 @@ public class ImportPrivacyGuard extends BasePageCrc
 		else
 		{
 		choosereportprovider();
-		Thread.sleep(2000);
-		String user = reportproviderusername.getText();
-		System.out.println(user);
-		//((JavascriptExecutor)driver).executeScript("window.scrollBy(0,900)", "");
-		if(reportproviderusername.getAttribute("innerHTML")==null)
-		{
-			Reporter.log("username is empty");
+//		Thread.sleep(2000);
+//		String user = reportproviderusername.getText();
+//		System.out.println(user);
+//		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,900)", "");
+//		if(reportproviderusername.getAttribute("innerHTML")==null)
+//		{
+//			Reporter.log("username is empty");
 			reportproviderusername.sendKeys(userid[5]);
 			reportproviderpassword.sendKeys(userid[6]);
 			SSNNumber.sendKeys(userid[7]);
-		}
-		else if(reportproviderusername!=null)
-		{
-			Reporter.log("username and password is autoentered");
-		}
+//		}
+//		else if(reportproviderusername!=null)
+//		{
+//			Reporter.log("username and password is autoentered");
+//		}
 		importandrunsimpleaudit();
 		
 
 		}
-		if(tagandsavependingreport.isDisplayed())
+		try
 		{
-		clickpreview.click();
+			if(tagandsavependingreport.isDisplayed())
+			{
+			clickpreview.click();
+			}
 		}
+		catch (Exception e)
+		{
+			System.out.println("getting error");
+		}
+		
 	}
 	
 	
@@ -269,12 +289,25 @@ public class ImportPrivacyGuard extends BasePageCrc
 		Thread.sleep(2000);
 		Assert.assertTrue(autoimportrunning.isDisplayed());
 		Reporter.log("Running autoimport");
-//		elementvisibility(simpleauditpopupheading);
-//		Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
-		Reporter.log("Credit analysis popup is displaying");
-		Thread.sleep(80000);
-		nextbutton.click();	
-		Reporter.log("Simple audit is done");
+		elementvisibility(error);
+		if(error.isDisplayed())
+		{
+			System.out.println(errormessage.getText());
+			closebutton.click();
+			Thread.sleep(50000);
+			dontsavebutton.click();
+			
+		}
+		else
+		{
+//			elementvisibility(simpleauditpopupheading);
+//			Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
+			Reporter.log("Credit analysis popup is displaying");
+			Thread.sleep(80000);
+			nextbutton.click();	
+			Reporter.log("Simple audit is done");
+		}
+
 		
 	}
 	

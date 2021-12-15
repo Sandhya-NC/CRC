@@ -6,6 +6,7 @@
 <parameter name="url" value="https://ui-test.creditrepaircloud.com/"/>
 <parameter name="notifications" value="--disable-notifications"/>
 <parameter name="WindowSize" value="--window-size=1900,1080"/>
+<parameter name="email" value="ncs9825@yopmail.com"/>
 <!--  Desktop Resolution  -->
 
 <classes>

@@ -53,12 +53,12 @@ public class DeleteFlowPage extends LoginPage
 	
 	
 	
-	public void deleteflow(String clientdata) throws InterruptedException 
+	public void deleteflow(String data) throws InterruptedException 
 	{
 		//DeleteFlowPage delete = new DeleteFlowPage(driver);
-		String email[] = clientdata.split(",");
+		//String email[] = clientdata.split(",");
 		clienttab.click();
-		clientsearchbar.sendKeys(email[15]);
+		clientsearchbar.sendKeys(data);
 		clientsearchbutton.click();
 		Thread.sleep(2000);
 		Assert.assertTrue(clientname.isDisplayed(), "No result found");
