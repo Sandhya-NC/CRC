@@ -301,7 +301,7 @@ public class ImportMyIdentityIQ extends BasePageCrc
 			{
 				System.out.println(errormessage.getText());
 				closebutton.click();
-				Thread.sleep(50000);
+				Thread.sleep(10000);
 				dontsavebutton.click();
 				
 			}

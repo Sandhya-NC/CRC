@@ -1,5 +1,8 @@
 package pom;
 
+import java.util.Random;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
+
+import okhttp3.internal.platform.ConscryptPlatform;
 
 public class AddClientPage extends LoginPage
 {
@@ -66,7 +71,7 @@ public class AddClientPage extends LoginPage
 	
 	
 	
-	
+	public String randomemailid;
 	
 	public void newclient(String data) throws InterruptedException 
 	{
@@ -84,14 +89,26 @@ public class AddClientPage extends LoginPage
 	//enter first name
 	Assert.assertTrue(firstname.isDisplayed());
 	firstname.sendKeys(clientdata[2]);
-	
+	Thread.sleep(2000);
 	//enter last name
 	Assert.assertTrue(lastname.isDisplayed());
 	lastname.sendKeys(clientdata[3]);
-	
+	Thread.sleep(2000);
 	//enter email
 	Assert.assertTrue(emailid.isDisplayed());
-	emailid.sendKeys(clientdata[4]);
+//	emailid.sendKeys(clientdata[4]);
+//	Thread.sleep(2000);
+	
+	//generate random email id
+	emailid.click();
+	Random randomgenerator = new Random();
+	int randomInt = randomgenerator.nextInt(1000);
+	randomemailid = clientdata[2]+clientdata[3]+randomInt+"@yopmail.com";
+	emailid.sendKeys(randomemailid);
+	Thread.sleep(2000);
+	
+	
+	
 	
 	//scroll horizontal
 	((JavascriptExecutor)driver).executeScript("window.scrollBy(0,600)","");
@@ -117,6 +134,6 @@ public class AddClientPage extends LoginPage
 	String text = clientname.getText();
 	Assert.assertTrue(text.contains(clientdata[2]));
 	Reporter.log("Client created successfully");
-	
+
 	}
 }

@@ -1,16 +1,18 @@
 package generic;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,13 +22,17 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.IDynamicGraph.Status;
+import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
-import org.testng.collections.Lists;
 
-public class BaseTest implements Autoconstantcrc
+import com.relevantcodes.extentreports.model.Test;
+
+public class BaseTest extends ExtentReporterNG implements Autoconstantcrc 
 {
 	public WebDriver driver;
 	
@@ -121,6 +127,14 @@ public class BaseTest implements Autoconstantcrc
 		}
 		
 	}
+	
+	public void screenshot() throws IOException
+	{
+		File srcfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(srcfile, new File("/home/aluser/eclipse-workspace/CRC/src/screenshots/testfailure.jpg"));
+	}
+	
+	
 	public void elementvisibility(WebElement element)
 	{
 		WebDriverWait wait=new WebDriverWait(driver, 30);
@@ -134,5 +148,6 @@ public class BaseTest implements Autoconstantcrc
 			Assert.fail();
 		}
 	}
+	
 	
 }

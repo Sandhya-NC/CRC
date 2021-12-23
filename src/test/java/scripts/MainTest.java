@@ -1,10 +1,13 @@
 package scripts;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 import generic.BaseTest;
+import generic.CustomListener;
 import pom.AddClientPage;
 import pom.DeleteFlowPage;
 import pom.ImportMyFreeScoreNow;
@@ -14,11 +17,13 @@ import pom.ImportSampleReport;
 import pom.ImportSmartCredit;
 import pom.LoginPage;
 
+
 public class MainTest extends BaseTest
 {
 		@Test(dataProvider = "clientdata",priority = 0)
 		public void SampleReport(String data) throws InterruptedException 
 		{
+			extentTest = extent.createTest("SampleReport");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -33,7 +38,7 @@ public class MainTest extends BaseTest
 		@Test(dataProvider = "clientdata",priority = 4)
 		public void PrivacyGuard(String data) throws InterruptedException 
 		{
-			
+			extentTest = extent.createTest("PrivacyGuard");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -44,10 +49,10 @@ public class MainTest extends BaseTest
 			
 		}
 		
-		@Test(dataProvider = "clientdata",priority = 1)
+		//@Test(dataProvider = "clientdata",priority = 1)
 		public void MyIdentityIq(String data) throws InterruptedException 
 		{
-				
+			extentTest = extent.createTest("MyIdentityIq");	
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -59,10 +64,10 @@ public class MainTest extends BaseTest
 			
 		}
 		
-		@Test(dataProvider = "clientdata",priority = 2)
+		//@Test(dataProvider = "clientdata",priority = 2)
 		public void MyFreeScoreNow(String data) throws InterruptedException 
 		{
-	
+			extentTest = extent.createTest("MyFreeScoreNow");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -74,10 +79,10 @@ public class MainTest extends BaseTest
 			
 		}
 		
-		@Test(dataProvider = "clientdata",priority = 3)
+		//@Test(dataProvider = "clientdata",priority = 3)
 		public void SmartCredit(String data) throws InterruptedException 
 		{
-			
+			extentTest = extent.createTest("SmartCredit");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -90,12 +95,12 @@ public class MainTest extends BaseTest
 		}
 		
 		
-		@AfterMethod()
-		@Parameters("email")
-		public void delete(String data) throws InterruptedException 
+		//@AfterMethod
+		//@Parameters("email")
+		public void delete() throws InterruptedException 
 		{
 			DeleteFlowPage delete = new DeleteFlowPage(driver);
-			delete.deleteflow(data);
+			delete.deleteflow();
 			driver.close();
 		}
 		

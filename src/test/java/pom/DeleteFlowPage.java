@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-public class DeleteFlowPage extends LoginPage
+public class DeleteFlowPage extends AddClientPage
 {
 
 	public DeleteFlowPage(WebDriver driver) 
@@ -53,12 +53,13 @@ public class DeleteFlowPage extends LoginPage
 	
 	
 	
-	public void deleteflow(String data) throws InterruptedException 
+	public void deleteflow() throws InterruptedException 
 	{
 		//DeleteFlowPage delete = new DeleteFlowPage(driver);
 		//String email[] = clientdata.split(",");
 		clienttab.click();
-		clientsearchbar.sendKeys(data);
+//		clientsearchbar.sendKeys(data);
+		clientsearchbar.sendKeys(randomemailid);
 		clientsearchbutton.click();
 		Thread.sleep(2000);
 		Assert.assertTrue(clientname.isDisplayed(), "No result found");
@@ -86,6 +87,7 @@ public class DeleteFlowPage extends LoginPage
 		String toastmessage = clientdeletesuccessfullytoastmessage.getText();
 		//System.out.println(toastmessage);
 		Reporter.log(toastmessage);
+		
 	}
 	
 }
