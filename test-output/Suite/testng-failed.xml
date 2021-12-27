@@ -10,11 +10,11 @@
     <classes>
       <class name="scripts.MainTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="precondition"/>
           <include name="getResult"/>
+          <include name="endReport"/>
+          <include name="startReport"/>
+          <include name="precondition"/>
           <include name="PrivacyGuard" invocation-numbers="0"/>
-          <include name="setUp"/>
         </methods>
       </class> <!-- scripts.MainTest -->
     </classes>

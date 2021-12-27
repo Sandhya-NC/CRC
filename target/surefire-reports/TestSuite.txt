@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 162.082 s <<< FAILURE! - in TestSuite
-scripts.MainTest.PrivacyGuard[uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-aid.com,flatop63,3944,daniel@credit-aid.com,flatop63,dr@creditrepaircloud.com,flatop63,ncs9825@yopmail.com](1)  Time elapsed: 61.607 s  <<< FAILURE!
-java.lang.AssertionError: null
-	at scripts.MainTest.PrivacyGuard(MainTest.java:48)
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 105.076 s <<< FAILURE! - in TestSuite
+scripts.MainTest.delete  Time elapsed: 80.526 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at scripts.MainTest.delete(MainTest.java:103)
 

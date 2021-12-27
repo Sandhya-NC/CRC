@@ -32,6 +32,8 @@ import org.testng.annotations.Parameters;
 
 import com.relevantcodes.extentreports.model.Test;
 
+import ExtentReports.ExtentReporterNG;
+
 public class BaseTest extends ExtentReporterNG implements Autoconstantcrc 
 {
 	public WebDriver driver;

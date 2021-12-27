@@ -10,11 +10,13 @@
     <classes>
       <class name="scripts.MainTest">
         <methods>
+          <include name="MyFreeScoreNow" invocation-numbers="0"/>
           <include name="getResult"/>
-          <include name="tearDown"/>
-          <include name="PrivacyGuard" invocation-numbers="0"/>
+          <include name="SmartCredit" invocation-numbers="0"/>
+          <include name="PrivacyGuard"/>
           <include name="precondition"/>
-          <include name="setUp"/>
+          <include name="endReport"/>
+          <include name="startReport"/>
         </methods>
       </class> <!-- scripts.MainTest -->
     </classes>

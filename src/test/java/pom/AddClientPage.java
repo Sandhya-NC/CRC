@@ -104,6 +104,7 @@ public class AddClientPage extends LoginPage
 	Random randomgenerator = new Random();
 	int randomInt = randomgenerator.nextInt(1000);
 	randomemailid = clientdata[2]+clientdata[3]+randomInt+"@yopmail.com";
+	System.out.println(randomemailid);
 	emailid.sendKeys(randomemailid);
 	Thread.sleep(2000);
 	

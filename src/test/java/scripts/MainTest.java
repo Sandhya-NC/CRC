@@ -23,7 +23,7 @@ public class MainTest extends BaseTest
 		@Test(dataProvider = "clientdata",priority = 0)
 		public void SampleReport(String data) throws InterruptedException 
 		{
-			extentTest = extent.createTest("SampleReport");
+			logger = extent.startTest("SampleReport");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -35,10 +35,10 @@ public class MainTest extends BaseTest
 			
 		}
 		
-		@Test(dataProvider = "clientdata",priority = 4)
+		//@Test(dataProvider = "clientdata",priority = 4)
 		public void PrivacyGuard(String data) throws InterruptedException 
 		{
-			extentTest = extent.createTest("PrivacyGuard");
+			logger = extent.startTest("PrivacyGuard");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -52,7 +52,7 @@ public class MainTest extends BaseTest
 		//@Test(dataProvider = "clientdata",priority = 1)
 		public void MyIdentityIq(String data) throws InterruptedException 
 		{
-			extentTest = extent.createTest("MyIdentityIq");	
+			logger = extent.startTest("MyIdentityIq");	
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -67,7 +67,7 @@ public class MainTest extends BaseTest
 		//@Test(dataProvider = "clientdata",priority = 2)
 		public void MyFreeScoreNow(String data) throws InterruptedException 
 		{
-			extentTest = extent.createTest("MyFreeScoreNow");
+			logger = extent.startTest("MyFreeScoreNow");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -82,7 +82,7 @@ public class MainTest extends BaseTest
 		//@Test(dataProvider = "clientdata",priority = 3)
 		public void SmartCredit(String data) throws InterruptedException 
 		{
-			extentTest = extent.createTest("SmartCredit");
+			logger = extent.startTest("SampleReport");
 			LoginPage login = new LoginPage(driver);
 			login.LogintoApplication(data);	
 			AddClientPage client = new AddClientPage(driver);
@@ -95,7 +95,7 @@ public class MainTest extends BaseTest
 		}
 		
 		
-		//@AfterMethod
+		@AfterMethod
 		//@Parameters("email")
 		public void delete() throws InterruptedException 
 		{
