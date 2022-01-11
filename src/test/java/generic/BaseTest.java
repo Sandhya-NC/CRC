@@ -36,7 +36,7 @@ import ExtentReports.ExtentReporterNG;
 
 public class BaseTest extends ExtentReporterNG implements Autoconstantcrc 
 {
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	@DataProvider(name = "data")
     public String[] logindataprovider() throws IOException, ParseException  
@@ -130,11 +130,7 @@ public class BaseTest extends ExtentReporterNG implements Autoconstantcrc
 		
 	}
 	
-	public void screenshot() throws IOException
-	{
-		File srcfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(srcfile, new File("/home/aluser/eclipse-workspace/CRC/src/screenshots/testfailure.jpg"));
-	}
+	
 	
 	
 	public void elementvisibility(WebElement element)

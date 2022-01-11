@@ -71,7 +71,7 @@ public class AddClientPage extends LoginPage
 	
 	
 	
-	public String randomemailid;
+	public static String randomemailid;
 	
 	public void newclient(String data) throws InterruptedException 
 	{

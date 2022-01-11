@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="scripts.MainTest" hash-for-method="SampleReport(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)">SampleReport(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="scripts.MainTest" hash-for-method="CRC(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)">CRC(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,22 +119,49 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">scripts.MainTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="SampleReport(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)">
-                  </a> <!-- SampleReport(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...) -->
-                  <span class="method-name">SampleReport</span>
+                  <a name="CRC(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)">
+                  </a> <!-- CRC(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...) -->
+                  <span class="method-name">CRC</span>
                   <span class="parameters">(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-aid.com,flatop63,3944,daniel@credit-aid.com,flatop63,dr@creditrepaircloud.com,flatop63,ncs9825@yopmail.com)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#username&quot;}
+  (Session info: chrome=95.0.4638.69)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;al-038&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.11.0-44-generic&apos;, java.version: &apos;1.8.0_312&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: /tmp/.com.google.Chrome.LeRZx6}, goog:chromeOptions: {debuggerAddress: localhost:32837}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 769baa3b5d9f1826236e7369c326e17a
+*** Element info: {Using=id, value=username}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at pom.LoginPage.LogintoApplication(LoginPage.java:44)
+	at scripts.MainTest.CRC(MainTest.java:122)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -194,14 +221,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SampleReport')
+data.setCell(0, 1, 'CRC')
 data.setCell(0, 2, 'scripts.MainTest')
-data.setCell(0, 3, 78063);
+data.setCell(0, 3, 30090);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -212,26 +239,6 @@ return data;
             <span class="header-content">Reporter output for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">SampleReport(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Login Successfully</span>
-                <span class="reporter-method-output">Client module opened successfully</span>
-                <span class="reporter-method-output">portalaccess on</span>
-                <span class="reporter-method-output">Clicked on save button</span>
-                <span class="reporter-method-output">Client created successfully</span>
-                <span class="reporter-method-output">Import/Audit button is visible in clientdashboard</span>
-                <span class="reporter-method-output">Clients entered into import page</span>
-                <span class="reporter-method-output">Import credit report tab is selected</span>
-                <span class="reporter-method-output">clicked on import credit report nowbutton</span>
-                <span class="reporter-method-output">popup is displaying</span>
-                <span class="reporter-method-output">oneclick auto import tab is opened</span>
-                <span class="reporter-method-output">username and password is autoentered</span>
-                <span class="reporter-method-output">Running autoimport</span>
-                <span class="reporter-method-output">Credit analysis popup is displaying</span>
-                <span class="reporter-method-output">Simple audit is done</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
@@ -254,25 +261,21 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">precondition(chrome, https://ui-test.creditrepaircloud.com/, --window-size=1900,1080, --disable-notifications)</span>
-                <span class="method-start">161 ms</span>
+                <span class="method-start">163 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">SampleReport(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)</span>
-                <span class="method-start">24045 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">delete</span>
-                <span class="method-start">102112 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-name">CRC(uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-...)</span>
+                <span class="method-start">2931 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">104604 ms</span>
+                <span class="method-name">getResult([TestResult name=CRC status=FAILURE method=MainTest.CRC(java.lang.String)[pri:0, instance:scripts.Ma...)</span>
+                <span class="method-start">33027 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">104606 ms</span>
+                <span class="method-start">33194 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

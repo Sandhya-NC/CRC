@@ -9,20 +9,35 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">104,611</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">33,516</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">scripts.MainTest</td><td><a href="#m0">delete</a></td><td rowspan="1">1640599462100</td><td rowspan="1">2486</td></tr><tr><th colspan="4">Test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="2">scripts.MainTest</td><td><a href="#m1">endReport</a></td><td rowspan="1">1640599464594</td><td rowspan="1">-1640599464594</td></tr><tr class="skippedeven"><td><a href="#m2">getResult</a></td><td rowspan="1">1640599464592</td><td rowspan="1">-1640599464592</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">scripts.MainTest</td><td><a href="#m3">SampleReport</a></td><td rowspan="1">1640599384033</td><td rowspan="1">78063</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">scripts.MainTest</td><td><a href="#m0">CRC</a></td><td rowspan="1">1641811165448</td><td rowspan="1">30090</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">scripts.MainTest#delete</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy11.sendKeys(Unknown Source)
-	at pom.DeleteFlowPage.deleteflow(DeleteFlowPage.java:62)
-	at scripts.MainTest.delete(MainTest.java:103)
+<h2>Test</h2><h3 id="m0">scripts.MainTest#CRC</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-aid.com,flatop63,3944,daniel@credit-aid.com,flatop63,dr@creditrepaircloud.com,flatop63,ncs9825@yopmail.com</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#username&quot;}
+  (Session info: chrome=95.0.4638.69)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;al-038&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.11.0-44-generic&apos;, java.version: &apos;1.8.0_312&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: /tmp/.com.google.Chrome.LeRZx6}, goog:chromeOptions: {debuggerAddress: localhost:32837}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 769baa3b5d9f1826236e7369c326e17a
+*** Element info: {Using=id, value=username}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at pom.LoginPage.LogintoApplication(LoginPage.java:44)
+	at scripts.MainTest.CRC(MainTest.java:122)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 40 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">scripts.MainTest#endReport</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">scripts.MainTest#getResult</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">scripts.MainTest#SampleReport</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-aid.com,flatop63,3944,daniel@credit-aid.com,flatop63,dr@creditrepaircloud.com,flatop63,ncs9825@yopmail.com</td></tr><tr><th>Messages</th></tr><tr><td><div class="messages">Login Successfully<br/>Client module opened successfully<br/>portalaccess on<br/>Clicked on save button<br/>Client created successfully<br/>Import/Audit button is visible in clientdashboard<br/>Clients entered into import page<br/>Import credit report tab is selected<br/>clicked on import credit report nowbutton<br/>popup is displaying<br/>oneclick auto import tab is opened<br/>username and password is autoentered<br/>Running autoimport<br/>Credit analysis popup is displaying<br/>Simple audit is done</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

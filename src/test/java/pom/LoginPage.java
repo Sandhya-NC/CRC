@@ -33,6 +33,8 @@ public class LoginPage extends BasePageCrc
 	@FindBy(xpath = "//h2[@class= 'm-auto heading-h2 m-t-0 m-b-40']")
 	public WebElement heading;
 	
+	@FindBy(xpath = "//a[text()='Home']")
+	public WebElement hometab;
 
 	
 

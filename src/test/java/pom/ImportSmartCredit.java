@@ -283,20 +283,20 @@ public class ImportSmartCredit extends BasePageCrc
 		if(error.isDisplayed())
 		{
 			System.out.println(errormessage.getText());
-			closebutton.click();
-			Thread.sleep(50000);
-			dontsavebutton.click();
-			
+//			closebutton.click();
+//			Thread.sleep(50000);
+//			dontsavebutton.click();
+//			
 		}
-		else
-		{
+//		else
+//		{
 //			elementvisibility(simpleauditpopupheading);
 //			Assert.assertTrue(importaudit.simpleauditpopupheading.isDisplayed());
 			Reporter.log("Credit analysis popup is displaying");
 			Thread.sleep(80000);
 			nextbutton.click();	
 			Reporter.log("Simple audit is done");
-		}
+//		}
 		
 	}
 	

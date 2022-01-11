@@ -10,11 +10,12 @@
     <classes>
       <class name="scripts.MainTest">
         <methods>
+          <include name="SmartCredit" invocation-numbers="0"/>
+          <include name="delete"/>
           <include name="getResult"/>
           <include name="endReport"/>
           <include name="startReport"/>
           <include name="precondition"/>
-          <include name="PrivacyGuard" invocation-numbers="0"/>
         </methods>
       </class> <!-- scripts.MainTest -->
     </classes>

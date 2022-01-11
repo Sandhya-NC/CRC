@@ -10,10 +10,8 @@
     <classes>
       <class name="scripts.MainTest">
         <methods>
-          <include name="MyFreeScoreNow" invocation-numbers="0"/>
           <include name="getResult"/>
-          <include name="SmartCredit" invocation-numbers="0"/>
-          <include name="PrivacyGuard"/>
+          <include name="CRC" invocation-numbers="0"/>
           <include name="precondition"/>
           <include name="endReport"/>
           <include name="startReport"/>

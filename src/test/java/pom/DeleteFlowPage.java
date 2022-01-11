@@ -55,6 +55,7 @@ public class DeleteFlowPage extends AddClientPage
 	
 	public void deleteflow() throws InterruptedException 
 	{
+		this.randomemailid = AddClientPage.randomemailid;
 		//DeleteFlowPage delete = new DeleteFlowPage(driver);
 		//String email[] = clientdata.split(",");
 		clienttab.click();

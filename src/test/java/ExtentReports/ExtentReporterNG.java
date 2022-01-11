@@ -1,7 +1,14 @@
 package ExtentReports;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.SkipException;
@@ -14,8 +21,11 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ExtentReporterNG
+import generic.BaseTest;
+
+public class ExtentReporterNG 
 {
+	
 	protected ExtentReports extent;
 	protected ExtentTest logger;
 	
@@ -56,13 +66,29 @@ public class ExtentReporterNG
 		throw new SkipException("Skipping - This is not ready for testing ");
 	}
 	
+	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException{
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String destination = System.getProperty("user.dir") + "/src/screenshots/" + screenshotName + dateName
+				+ ".png";
+		File finalDestination = new File(destination);
+		FileUtils.copyFile(source, finalDestination);
+		return destination;
+	}
+	
+	
+	
+	
 	@AfterMethod
-	public void getResult(ITestResult result)
+	public void getResult(ITestResult result) throws IOException
 	{
 		if(result.getStatus() == ITestResult.FAILURE)
 		{
 			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getName());
 			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getThrowable());
+			String screenshotPath = ExtentReporterNG.getScreenshot(BaseTest.driver, result.getName());
+			logger.log(LogStatus.FAIL, logger.addScreenCapture(screenshotPath)); 
 		}
 		else if(result.getStatus() == ITestResult.SKIP)
 		{
@@ -85,4 +111,6 @@ public class ExtentReporterNG
 		extent.close();
 	}
 }
+
+
 

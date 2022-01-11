@@ -1,8 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 105.076 s <<< FAILURE! - in TestSuite
-scripts.MainTest.delete  Time elapsed: 80.526 s  <<< FAILURE!
-java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at scripts.MainTest.delete(MainTest.java:103)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 34.111 s <<< FAILURE! - in TestSuite
+scripts.MainTest.CRC[uiux@yopmail.com,Test@1234,Enter,client,ncs9825@yopmail.com,danielrosen,flatop63,3944,daniel@credit-aid.com,flatop63,3944,daniel@credit-aid.com,flatop63,dr@creditrepaircloud.com,flatop63,ncs9825@yopmail.com](1)  Time elapsed: 30.053 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#username"}
+  (Session info: chrome=95.0.4638.69)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'al-038', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.11.0-44-generic', java.version: '1.8.0_312'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: /tmp/.com.google.Chrome.LeRZx6}, goog:chromeOptions: {debuggerAddress: localhost:32837}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 769baa3b5d9f1826236e7369c326e17a
+*** Element info: {Using=id, value=username}
+	at scripts.MainTest.CRC(MainTest.java:122)
 
